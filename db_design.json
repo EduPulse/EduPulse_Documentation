@@ -1,11 +1,20 @@
+//TO DO
+/*following (pins)
+  user social media links
+  ads
+  open auth
+  notification tags
+*/
+
+
 {
     "user" : {
         "_id": "",
         "_timestamp": "",
-        //open_auth
         "name": "",
         "personal_email": "",
         "academic_email": "",
+        "bio": "",
         "role": "",
         "gender": "",
         "birthday": "",
@@ -30,7 +39,6 @@
             }
         ],
         "notification_tags": [
-            
         ],
         "reports": [
             {
