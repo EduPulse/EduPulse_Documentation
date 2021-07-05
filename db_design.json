@@ -1,7 +1,3 @@
-//TO DO
-/*
-  open auth
-*/
 {
   "user": {
     "_id": "",
@@ -13,7 +9,10 @@
     "role": "",
     "gender": "",
     "birthday": "",
-    "user_state": "",
+    "academic_state": {
+      "_timestamp": "",
+      "state": ""
+    },
     "socials": {
       "linkedin": "",
       "facebook": "",
@@ -43,6 +42,7 @@
       {
         "_id": "",
         "_timestamp": "",
+        "content_type": "",
         "content_id": ""
       }
     ],
@@ -128,25 +128,38 @@
         "_timestamp": "",
         "commenter": "",
         "content": "",
-        "liked_by": [],
+        "upvotes": [
+          {
+            "_id": "",
+            "_timestamp": "",
+            "upvoted_by": ""
+          }
+        ],
+        "downvotes": [
+          {
+            "_id": "",
+            "_timestamp": "",
+            "downvoted_by": ""
+          }
+        ],
         "notification_subscribers": [
           "0001"
         ],
         "comments": []
       }
     ],
-    "likes": [
+    "upvotes": [
       {
         "_id": "",
         "_timestamp": "",
-        "liked_by": ""
+        "upvoted_by": ""
       }
     ],
-    "dislikes": [
+    "downvotes": [
       {
         "_id": "",
         "_timestamp": "",
-        "liked_by": ""
+        "downvoted_by": ""
       }
     ],
     "reports": ["000000"],
@@ -181,6 +194,12 @@
       "user_institute": "",
       "post_id": "",
       "comment_id": ""
+    },
+    "closed": "",
+    "closed_info": {
+      "_timestamp": "",
+      "user_id": "",
+      "action": ""
     }
   },
 
