@@ -4,7 +4,7 @@
         -> admin
         -> moderator
         -> academic
-            ** academic_student
+            * academic_student
             * academic_staff
         -> general
     academic_state: whether request for academic user accepted or not
