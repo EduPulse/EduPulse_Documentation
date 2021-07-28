@@ -11,7 +11,7 @@
         -> state: 
             * accepted
             * rejected
-    notificatio
+    notifications
         -> status: whether notification viewed or not
     following_tags:
         -> type: fallowing a user tag or a content tag
@@ -31,7 +31,7 @@
         * draft
     versions
         -> version: this version number
-        -> contributer: user who contributed (single)
+        -> contributer: user who contributed (single), or original author in v0
     type
         * article
         * video

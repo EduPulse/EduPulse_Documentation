@@ -3,16 +3,18 @@
     "_id": "",
     "_timestamp": "",
     "name": "",
-    "personal_email": "",
-    "academic_email": "",
+    "personalEmail": "",
+    "academicEmail": "",
+    "profilePicture": "",
     "bio": "",
-    "role": "",
     "gender": "",
     "birthday": "",
-    "academic_state": {
+    "role": "",
+    "academicState": {
       "_timestamp": "",
       "state": ""
     },
+    "academicInstitue": "ObjectId --refs Institute",
     "socials": {
       "linkedin": "",
       "facebook": "",
@@ -20,7 +22,7 @@
       "github": "",
       "personal": ""
     },
-    "followed_by": ["00000"],
+    "followedBy": ["ObjectId --refs User"],
     "notifications": [
       {
         "_id": "",
@@ -30,27 +32,28 @@
         "status":""
       }
     ],
-    "following_tags": [
+    "followingTags": [
       {
         "_id": "",
         "_timestamp": "",
-        "tag_id": "",
+        "tagId": "ObjectId --refs Tag",
         "type": ""
       }
     ],
-    "subscribed_notifications": [
+    "subscribedNotifications": [
       {
         "_id": "",
         "_timestamp": "",
-        "content_type": "",
-        "content_id": ""
+        "contentType": "",
+        "contentId": ""
       }
     ],
     "reports": [
       {
         "_id": "",
         "_timestamp": "",
-        "reported_by": "",
+        "reportId": "",
+        "reportedBy": "",
         "title": "",
         "message": ""
       }
@@ -68,7 +71,7 @@
         "_id": "",
         "_timestamp": "",
         "name": "",
-        "saved_posts": [
+        "savedPosts": [
           {
             "_id": "",
             "_timestamp": "",
@@ -85,13 +88,13 @@
     "name": "",
     "domain": "",
     "description": "",
-    "cover_image": "",
-    "contact_details": {
+    "coverImage": "",
+    "contactDetails": {
       "email": "",
-      "phone_nos": ["0000000000"],
+      "phoneNos": ["0000000000"],
       "address": {
-        "line_1": "",
-        "line_2": "",
+        "line1": "",
+        "line2": "",
         "city": "",
         "country": ""
       }
@@ -101,79 +104,80 @@
   "post": {
     "_id": "",
     "_timestamp": "",
-    "status": "",
+    "author": "ObjectId --refs User",
     "type": "",
-    "versions": [
-      {
-        "_id": "",
-        "_timestamp": "",
-        "version": "",
-        "title": "",
-        "cover_image": "",
-        "content": "",
-        "read_time": "",
-        "tags": ["0000000"],
-        "contributer": ""
-      }
-    ],
-    "pin": {
-      "original_post": "",
-      "comment": ""
-    },
-    "licence": "",
     "visibility": "",
+    "article": {
+      "status": "",
+      "versions": [
+        {
+          "_id": "",
+          "_timestamp": "",
+          "version": "",
+          "title": "",
+          "coverImage": "",
+          "content": "",
+          "readTime": "",
+          "tags": ["ObjectId --refs Tag"],
+          "contributer": "ObjectId --refs User"
+        }
+      ],
+      "licence": "",
+      "upvotes": [
+        {
+          "_id": "",
+          "_timestamp": "",
+          "by": "ObjectId --refs User"
+        }
+      ],
+      "downvotes": [
+        {
+          "_id": "",
+          "_timestamp": "",
+          "by": "ObjectId --refs User"
+        }
+      ],
+      "pinnedBy": [
+        {
+          "_id": "",
+          "_timestamp": "",
+          "user": "ObjectId --refs User",
+          "post": "ObjectId --refs Post"
+        }
+      ],
+      "notificationSubscribers": [
+        "ObjectId --refs User"
+      ]
+    },
+    "pin": {
+      "originalPost": "ObjectId --refs Post",
+      "pinComment": ""
+    },
     "comments": [
       {
         "_id": "",
         "_timestamp": "",
-        "commenter": "",
+        "commenter": "ObjectId --refs User",
         "content": "",
         "upvotes": [
           {
             "_id": "",
             "_timestamp": "",
-            "upvoted_by": ""
+            "by": "ObjectId --refs User"
           }
         ],
         "downvotes": [
           {
             "_id": "",
             "_timestamp": "",
-            "downvoted_by": ""
+            "by": "ObjectId --refs User"
           }
         ],
-        "notification_subscribers": [
-          "0001"
-        ],
-        "comments": []
+        "comments": [],
+        "reports": ["ObjectId --refs Report"]
       }
     ],
-    "upvotes": [
-      {
-        "_id": "",
-        "_timestamp": "",
-        "upvoted_by": ""
-      }
-    ],
-    "downvotes": [
-      {
-        "_id": "",
-        "_timestamp": "",
-        "downvoted_by": ""
-      }
-    ],
-    "reports": ["000000"],
-    "pinned_by": [
-      {
-        "_id": "",
-        "_timestamp": "",
-        "user_id": "",
-        "post_id": ""
-      }
-    ],
-    "notification_subscribers": [
-      "0001"
-    ]
+    "reports": ["ObjectId --refs Report"]
   },
 
   "tag": {
@@ -185,20 +189,20 @@
   "report": {
     "_id": "",
     "_timestamp": "",
-    "reported_by": "",
+    "reportedBy": "",
     "type": "",
     "title": "",
     "message": "",
     "against": {
-      "user_id": "",
-      "user_institute": "",
-      "post_id": "",
-      "comment_id": ""
+      "user": "ObjectId --refs User",
+      "userInstitute": "ObjectId --refs User",
+      "post": "ObjectId --refs Post",
+      "comment": "ObjectId"
     },
     "closed": "",
-    "closed_info": {
+    "closedInfo": {
       "_timestamp": "",
-      "user_id": "",
+      "userId": "",
       "action": ""
     }
   },
@@ -206,33 +210,33 @@
   "academic_user_request": {
     "_id": "",
     "_timestamp": "",
-    "user_id": "",
-    "institute_id": "",
+    "userId": "ObjectId --refs User",
+    "instituteId": "ObjectId --refs Institute",
     "status": ""
   },
 
   "advertiser": {
     "_id": "",
     "_timestamp": "",
-    "public_name": "",
-    "contact_details": {
+    "publicName": "",
+    "contactDetails": {
       "email": "",
-      "phone_no": ""
+      "phoneNo": ""
     },
     "advertisements": [
       {
         "_id": "",
         "_timestamp": "",
-        "valid_till": "",
+        "validTill": "",
         "type": "",
         "images": [],
         "video": "",
         "caption": "",
-        "redirect_link": "",
-        "related_tags": ["...."],
-        "payment_details": {
+        "redirectLink": "",
+        "relatedTags": ["...."],
+        "paymentDetails": {
           "_timestamp": "",
-          "payment_method": "",
+          "paymentMethod": "",
           "amount": "",
           "description": ""
         }
